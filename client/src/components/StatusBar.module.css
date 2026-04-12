@@ -1,0 +1,76 @@
+.bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 0;
+  font-size: 11px;
+  color: var(--text-muted);
+  overflow: hidden;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sep {
+  width: 1px;
+  height: 14px;
+  background: var(--border);
+  margin: 0 10px;
+  flex-shrink: 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+/* Connection dot + label */
+.dot {
+  font-size: 9px;
+  line-height: 1;
+}
+
+.statusText {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 10px;
+}
+
+/* Stat blocks */
+.stat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  font-variant-numeric: tabular-nums;
+}
+
+.statLabel {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.statValue {
+  color: var(--text);
+  font-size: 11px;
+}
+
+.statUnit {
+  font-size: 9px;
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+/* Build tag */
+.build {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  opacity: 0.5;
+  text-transform: uppercase;
+}

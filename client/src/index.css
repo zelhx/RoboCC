@@ -1,0 +1,33 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0d0f14;
+  --surface: #161a23;
+  --border: #2a2f3d;
+  --text: #e2e8f0;
+  --text-muted: #64748b;
+  --accent: #22d3ee;
+  --accent-dim: rgba(34, 211, 238, 0.15);
+  --danger: #f87171;
+  --warn: #fbbf24;
+  --ok: #34d399;
+
+  font-family: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}

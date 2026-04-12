@@ -1,0 +1,33 @@
+.app-shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 1fr 28px;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.app-sidebar {
+  grid-row: 1;
+  grid-column: 1;
+  overflow: hidden;
+  border-right: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+}
+
+.app-viewport {
+  grid-row: 1;
+  grid-column: 2;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-statusbar {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}

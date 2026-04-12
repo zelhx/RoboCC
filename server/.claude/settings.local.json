@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls C:/Users/PREDATOR/RoboCC/server/*.js)",
+      "Bash(ls C:/Users/PREDATOR/RoboCC/server/src/*.js)"
+    ]
+  }
+}
