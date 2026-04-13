@@ -49,12 +49,19 @@ export default function Robot() {
 
     const toRad = (deg) => (deg * Math.PI) / 180
 
+    // IK joint mapping (DH indices → visual refs):
+    //   joints[0] = J1 base azimuth      → turntable Y
+    //   joints[1] = J2 shoulder frame    → wrist Y (a=0,d=0; usually ~0)
+    //   joints[2] = J3 upper-arm pitch   → shoulder X
+    //   joints[3] = J4 forearm pitch     → elbow X
+    //   joints[4] = J5 wrist twist       → wrist X (a=0,d=0)
+    //   joints[5] = J6 tool              → wrist Z
     if (turntableRef.current) turntableRef.current.rotation.y = toRad(joints[0])
-    if (shoulderRef.current)  shoulderRef.current.rotation.x  = toRad(joints[1])
-    if (elbowRef.current)     elbowRef.current.rotation.x     = toRad(joints[2])
+    if (shoulderRef.current)  shoulderRef.current.rotation.x  = toRad(joints[2])
+    if (elbowRef.current)     elbowRef.current.rotation.x     = toRad(joints[3])
     if (wristRef.current) {
-      wristRef.current.rotation.x = toRad(joints[3])
-      wristRef.current.rotation.y = toRad(joints[4])
+      wristRef.current.rotation.x = toRad(joints[4])
+      wristRef.current.rotation.y = toRad(joints[1])
       wristRef.current.rotation.z = toRad(joints[5])
     }
   })

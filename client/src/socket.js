@@ -21,6 +21,12 @@ socket.on('telemetry', (data) => {
   useRobotStore.getState().applyTelemetry(data)
 })
 
+socket.on('ik:solution', (data) => {
+  if (data.success && Array.isArray(data.angles)) {
+    useRobotStore.getState().setJoints(data.angles)
+  }
+})
+
 export function initSocket() {
   useRobotStore.getState().setStatus('connecting')
   socket.connect()

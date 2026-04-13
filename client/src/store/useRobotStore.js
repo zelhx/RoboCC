@@ -35,6 +35,10 @@ const useRobotStore = create((set) => ({
       return { joints }
     }),
 
+  // Apply all six joint angles at once (radians → degrees)
+  setJoints: (radians) =>
+    set({ joints: radians.map((r) => (r * 180) / Math.PI) }),
+
   setPosition: (position) => set({ position }),
   setRotation: (rotation) => set({ rotation }),
   setVelocity: (velocity) => set({ velocity }),

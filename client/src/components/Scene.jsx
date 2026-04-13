@@ -1,9 +1,13 @@
+import { useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Environment, PerspectiveCamera } from '@react-three/drei'
 import Arena from './Arena'
 import Robot from './Robot'
+import IKTarget from './IKTarget'
 
 export default function Scene() {
+  const [orbitEnabled, setOrbitEnabled] = useState(true)
+
   return (
     <Canvas shadows>
       <PerspectiveCamera makeDefault position={[0, 6, 16]} fov={50} />
@@ -27,6 +31,7 @@ export default function Scene() {
 
       <Arena />
       <Robot />
+      <IKTarget onDragChange={(isDragging) => setOrbitEnabled(!isDragging)} />
 
       <OrbitControls
         target={[0, 2, 0]}
@@ -34,6 +39,7 @@ export default function Scene() {
         minDistance={3}
         maxDistance={40}
         enablePan={false}
+        enabled={orbitEnabled}
       />
     </Canvas>
   )
